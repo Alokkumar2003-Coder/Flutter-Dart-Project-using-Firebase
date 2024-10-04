@@ -4,12 +4,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) async {
-  await WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(Home());
+  runApp(const Home());
 }
 
 class Home extends StatelessWidget {
@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: homepage(),
     );
   }
@@ -45,7 +45,7 @@ class _homepageState extends State<homepage> {
               padding: const EdgeInsets.all(20),
               child: TextFormField(
                 controller: name,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "name"),
               ),
             ),
@@ -53,7 +53,7 @@ class _homepageState extends State<homepage> {
               padding: const EdgeInsets.all(20),
               child: TextFormField(
                 controller: age,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: "age"),
               ),
             ),
@@ -63,7 +63,7 @@ class _homepageState extends State<homepage> {
                       .collection('users')
                       .add({"name": name.text.trim(), "age": age.text.trim()});
                 },
-                child: Text("add data in firebase"))
+                child: const Text("add data in firebase"))
           ],
         ),
       ),
