@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -54,9 +42,46 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDmCvfHwhavcCau4_iDdnjEhVEs0eTIIQ8',
-    appId: '1:51947556759:android:d97aebbb28a053f7d8bed2',
+    appId: '1:51947556759:android:ceebfe361feb9d49d8bed2',
     messagingSenderId: '51947556759',
     projectId: 'fir-2145a',
     storageBucket: 'fir-2145a.appspot.com',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyATyKpgl6EFHy-0PrCmH5Cu9IFBAd6TvE4',
+    appId: '1:51947556759:web:4b4b951b6201e7c1d8bed2',
+    messagingSenderId: '51947556759',
+    projectId: 'fir-2145a',
+    authDomain: 'fir-2145a.firebaseapp.com',
+    storageBucket: 'fir-2145a.appspot.com',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyA8JOPGP1iF1Nbsq1Wy9ROzE_WXlBwsWoM',
+    appId: '1:51947556759:ios:ad44a689cdeea3fcd8bed2',
+    messagingSenderId: '51947556759',
+    projectId: 'fir-2145a',
+    storageBucket: 'fir-2145a.appspot.com',
+    iosBundleId: 'com.example.firebaseConnection',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA8JOPGP1iF1Nbsq1Wy9ROzE_WXlBwsWoM',
+    appId: '1:51947556759:ios:ad44a689cdeea3fcd8bed2',
+    messagingSenderId: '51947556759',
+    projectId: 'fir-2145a',
+    storageBucket: 'fir-2145a.appspot.com',
+    iosBundleId: 'com.example.firebaseConnection',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyATyKpgl6EFHy-0PrCmH5Cu9IFBAd6TvE4',
+    appId: '1:51947556759:web:e95d7360789d86f0d8bed2',
+    messagingSenderId: '51947556759',
+    projectId: 'fir-2145a',
+    authDomain: 'fir-2145a.firebaseapp.com',
+    storageBucket: 'fir-2145a.appspot.com',
+  );
+
 }

@@ -71,6 +71,3 @@ class _homepageState extends State<homepage> {
   }
 }
 
-// just run in chrome
-// auto save next time please on
-// ok do it
